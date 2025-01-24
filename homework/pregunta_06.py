@@ -5,7 +5,7 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
-
+import pandas as pd
 def pregunta_06():
     """
     Retorne una lista con los valores unicos de la columna `c4` del archivo
@@ -15,3 +15,10 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    tbl1 = pd.read_csv("files/input/tbl1.tsv", sep="\t")
+    
+    valores_unicos = sorted(tbl1["c4"].str.upper().unique())
+    
+    return valores_unicos
+
+print(pregunta_06())
